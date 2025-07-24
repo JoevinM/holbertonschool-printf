@@ -94,7 +94,7 @@ int print_string(va_list args)
 	int i = 0;
 
 	if (!str)
-	str = "(NULL)";
+	str = "(null)";
 	while (str[i])
 	{
 		_putchar(str[i]);
