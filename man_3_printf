@@ -1,0 +1,115 @@
+.TH _PRINTF 3 "22 juillet 2025" "Librairie C personnalisée" "Commandes utilisateur"
+
+.SH NOM
+_printf \- fonction personnalisée qui affiche une chaîne formatée sur la sortie standard
+
+.SH SYNOPSIS
+.B #include "main.h"
+.PP
+.B int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+.B _printf
+est une implémentation simplifiée de la fonction standard
+.BR printf (3),
+permettant d'afficher du texte formaté sur la sortie standard.
+
+.PP
+Elle interprète la chaîne
+.I format
+et affiche les caractères normaux tels quels. Lorsqu'elle rencontre un spécificateur de format
+(précédé du caractère
+.B %),
+elle appelle la fonction appropriée pour afficher l'argument correspondant.
+
+.PP
+Les spécificateurs supportés sont :
+
+.TP
+.B %c
+Affiche un seul caractère.
+
+.TP
+.B %s
+Affiche une chaîne de caractères.  
+Si la chaîne est
+.IR NULL ,
+affiche la chaîne littérale "(NULL)".
+
+.TP
+.B %d
+Affiche un entier signé en base décimale.
+
+.TP
+.B %i
+Alias de
+.B %d.
+
+.TP
+.B %%
+Affiche le caractère '%' lui-même.
+
+.PP
+Les drapeaux, largeur de champ, précision et modificateurs de longueur
+ne sont pas pris en charge.
+
+.SH VALEUR DE RETOUR
+La fonction retourne le nombre total de caractères affichés (hors caractère nul).  
+En cas d'erreur ou si
+.IR format
+est
+.IR NULL,
+le comportement est indéfini.
+
+.SH EXEMPLES
+Afficher une date :
+
+.PP
+.RS
+_printf("%s %d %s %d", jour, date, mois, annee);
+.RE
+
+Afficher plusieurs types :
+
+.PP
+.RS
+_printf("Lettre : %c, Chaîne : %s, Nombre : %i", 'A', "texte", 123);
+.RE
+
+Afficher un pourcentage :
+
+.PP
+.RS
+_printf("Progression : 50%% terminée.");
+.RE
+
+.SH FICHIERS
+.TP
+main.h
+Définitions des structures, prototypes et includes nécessaires.
+
+.TP
+_printf.c
+Implémentation principale de la fonction
+.B _printf.
+
+.TP
+get_function.c
+Fonction pour associer un spécificateur à sa fonction d'affichage.
+
+.TP
+print_utils.c
+Fonctions d'affichage pour les différents types pris en charge.
+
+.TP
+main.c
+Exemples de tests (optionnel).
+
+.SH AUTEURS
+JoevinM
+
+.SH VOIR AUSSI
+.BR printf (3)
+
+.SH DATE
+22/07/2025
