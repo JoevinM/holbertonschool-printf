@@ -23,22 +23,22 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (format[i])
 	{
-		if (format[i] == '%' && format[i + 1] != '\0')
+		if (format[i] == '%')
 		{
+			if (format[i + 1] == '\0')
+			{
+				va_end(args);
+				return (-1);
+			}
 			i++;
 			if (format[i] == '%')
-			{
-				_putchar('%');
-				count++;
-			}
+				count += _putchar('%');
 			else
 			{
 				int (*f)(va_list) = get_a_function(format[i]);
 
 				if (f)
-				{
 					count += f(args);
-				}
 				else
 				{
 					_putchar('%');
