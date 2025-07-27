@@ -25,12 +25,12 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '\0')
+			i++;
+			if (format[i] == '\0')
 			{
 				va_end(args);
 				return (-1);
 			}
-			i++;
 			if (format[i] == '%')
 				count += _putchar('%');
 			else
