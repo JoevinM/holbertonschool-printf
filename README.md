@@ -7,6 +7,7 @@ Ce projet met en œuvre des concepts fondamentaux comme les **fonctions variadiq
 
 ## Table des matières
 
+- [Flowchart](#flowchart)
 - [Fonctionnalités](#fonctionnalités)
 - [Spécificateurs supportés](#spécificateurs-supportés)
 - [Structure du projet](#structure-du-projet)
@@ -19,6 +20,11 @@ Ce projet met en œuvre des concepts fondamentaux comme les **fonctions variadiq
 
 ---
 
+## Flowchart
+
+![Flowchart](https://raw.githubusercontent.com/JoevinM/holbertonschool-printf/refs/heads/main/_printf.jpg)
+
+---
 ## Fonctionnalités
 
 - Gestion de plusieurs spécificateurs de format :
