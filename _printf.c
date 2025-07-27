@@ -41,9 +41,8 @@ int _printf(const char *format, ...)
 					count += f(args);
 				else
 				{
-					_putchar('%');
-					_putchar(format[i]);
-					count += 2;
+					count += _putchar('%');
+					count += _putchar(format[i]);
 				}
 			}
 			i++;
