@@ -56,7 +56,6 @@ Ce projet met en œuvre des concepts fondamentaux comme les **fonctions variadiq
 | `main.h`               | Déclarations des fonctions et structure `specifier_f` |
 | `_printf.c`            | Fonction principale qui gère le formatage             |
 | `get_print_function.c` | Associe un spécificateur à sa fonction                |
-| `handlers.c`           | Contient `print_char`, `print_string`, `print_integer` |
 | `_putchar.c`           | Écriture d’un caractère via `write`                   |
 | `main.c`               | Cas de test                                            |
 
